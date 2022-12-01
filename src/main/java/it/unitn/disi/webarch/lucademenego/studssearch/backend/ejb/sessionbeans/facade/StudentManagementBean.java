@@ -3,9 +3,9 @@ package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.sessionbeans.
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.EnrollmentInformation;
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentCourseInformation;
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentInformation;
-import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.EnrollmentAssembler;
-import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.StudentAssembler;
-import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.StudentCourseAssembler;
+import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.EnrollmentInformationAssembler;
+import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.StudentInformationAssembler;
+import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.StudentCourseInformationAssembler;
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.sessionbeans.Student;
 import jakarta.ejb.Remote;
 import jakarta.ejb.Stateless;
@@ -19,16 +19,16 @@ public class StudentManagementBean implements StudentManagement {
 
     @Override
     public StudentInformation addNewStudent(StudentInformation student) {
-        return new StudentAssembler().assemble(studentBean.addStudent(student));
+        return new StudentInformationAssembler().assemble(studentBean.addStudent(student));
     }
 
     @Override
     public EnrollmentInformation enrollToCourse(EnrollmentInformation enrollment) {
-        return new EnrollmentAssembler().assemble(studentBean.enrollToCourse(enrollment));
+        return new EnrollmentInformationAssembler().assemble(studentBean.enrollToCourse(enrollment));
     }
 
     @Override
     public StudentCourseInformation setVote(Integer matriculation, Integer courseId, Integer vote) {
-        return new StudentCourseAssembler().assemble(studentBean.setVote(matriculation, courseId, vote));
+        return new StudentCourseInformationAssembler().assemble(studentBean.setVote(matriculation, courseId, vote));
     }
 }

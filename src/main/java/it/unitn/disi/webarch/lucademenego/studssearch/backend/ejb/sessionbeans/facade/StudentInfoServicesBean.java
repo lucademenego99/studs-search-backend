@@ -1,11 +1,11 @@
 package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.sessionbeans.facade;
 
-import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentAdvisory;
-import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentComplete;
+import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentAdvisorChoices;
+import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentAndCourses;
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentInformation;
-import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.StudentAssembler;
-import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.CompleteStudentAssembler;
-import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.entities.StudentEntity;
+import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.StudentAdvisorChoicesAssembler;
+import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.StudentInformationAssembler;
+import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemblers.StudentAndCoursesAssembler;
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.sessionbeans.Student;
 import jakarta.ejb.Remote;
 import jakarta.ejb.Stateless;
@@ -28,17 +28,17 @@ public class StudentInfoServicesBean implements StudentInfoServices {
     @Override
     public List<StudentInformation> getStudents() {
         return studentBean.getAllStudents().stream().map(s ->
-            new StudentAssembler().assemble(s)
+            new StudentInformationAssembler().assemble(s)
         ).collect(Collectors.toList());
     }
 
     @Override
-    public StudentComplete getStudent(Integer matriculation) {
-        return new CompleteStudentAssembler().assemble(studentBean.getStudent(matriculation));
+    public StudentAndCourses getStudent(Integer matriculation) {
+        return new StudentAndCoursesAssembler().assemble(studentBean.getStudent(matriculation));
     }
 
     @Override
-    public StudentAdvisory getStudentAdvisoryChoices(Integer matriculation) {
-        return null;
+    public StudentAdvisorChoices getStudentAdvisorChoices(Integer matriculation) {
+        return new StudentAdvisorChoicesAssembler().assemble(studentBean.getStudent(matriculation));
     }
 }

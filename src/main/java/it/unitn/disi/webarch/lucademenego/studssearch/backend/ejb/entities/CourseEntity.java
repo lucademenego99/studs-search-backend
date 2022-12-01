@@ -21,11 +21,6 @@ public class CourseEntity implements Serializable {
         this.name = name;
     }
 
-//    public CourseEntity(String name, Integer teacherId) {
-//        this.name = name;
-//        this.teacherId = teacherId;
-//    }
-
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,7 +55,6 @@ public class CourseEntity implements Serializable {
     public void setStudentCourses(Collection<StudentCourse> courseStudents) {
         this.courseStudents = courseStudents;
     }
-
 
     @Override
     public boolean equals(Object o) {
