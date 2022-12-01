@@ -68,6 +68,9 @@
       <option name="BuildArtifacts" enabled="true">
         <artifact name="studs-search-backend:war exploded" />
       </option>
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="studs-search-backend:jar" />
+      </option>
     </method>
   </configuration>
 </component>
