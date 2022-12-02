@@ -9,6 +9,6 @@ public class CourseInformationAssembler implements Assembler<CourseEntity, Cours
         if (entity == null) {
             return null;
         }
-        return new CourseInformation(entity.getName());
+        return new CourseInformation(entity.getName(), entity.getId());
     }
 }

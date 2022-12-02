@@ -4,8 +4,14 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class TeacherInformation implements Serializable {
+    private Integer id;
     private String name;
     private String surname;
+
+
+    public Integer getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -18,6 +24,13 @@ public class TeacherInformation implements Serializable {
     public TeacherInformation() {}
 
     public TeacherInformation(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+        this.id = -1;
+    }
+
+    public TeacherInformation(Integer id, String name, String surname) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
     }

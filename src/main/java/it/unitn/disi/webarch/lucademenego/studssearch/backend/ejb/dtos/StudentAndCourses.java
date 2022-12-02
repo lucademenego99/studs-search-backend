@@ -39,10 +39,11 @@ public class StudentAndCourses implements Serializable {
         for (CourseAndVote course : courses) {
             html.append("<li>")
                     .append("<p>").append(course.getName()).append("</p>")
-                    .append("<div class='vote'>").append(course.getVote()).append("</div>")
+                    .append("<div class='vote'>").append(course.getVote() != null ? course.getVote() : "").append("</div>")
                     .append("</li>")
                     .append("<div class='neuro-divider'></div>");
         }
+        html.append("</ul>");
         return html.toString();
     }
 }

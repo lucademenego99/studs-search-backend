@@ -51,4 +51,17 @@ public class StudentAdvisorChoices implements Serializable {
     public int hashCode() {
         return 31 * matriculation.hashCode() + name.hashCode() + surname.hashCode() + teachers.hashCode();
     }
+
+    public String mapTeachersToHTML() {
+        StringBuilder html = new StringBuilder("<ul>");
+        for (TeacherInformation teacher : teachers) {
+            html.append("<li>")
+                    .append("<p>").append(teacher.getName()).append(" ").append(teacher.getSurname()).append("</p>")
+                    .append("<div class='outside-neuro check'></div>")
+                    .append("</li>")
+                    .append("<div class='neuro-divider'></div>");
+        }
+        html.append("</ul>");
+        return html.toString();
+    }
 }

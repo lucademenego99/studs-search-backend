@@ -1,8 +1,9 @@
 package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class StudentCourseInformation {
+public class StudentCourseInformation implements Serializable {
     private StudentInformation student;
     private CourseInformation course;
     private Integer vote;

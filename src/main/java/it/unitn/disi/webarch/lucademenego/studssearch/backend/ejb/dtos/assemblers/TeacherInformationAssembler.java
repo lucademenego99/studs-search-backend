@@ -9,6 +9,6 @@ public class TeacherInformationAssembler implements Assembler<TeacherEntity, Tea
         if (entity == null) {
             return null;
         }
-        return new TeacherInformation(entity.getName(), entity.getSurname());
+        return new TeacherInformation(entity.getId(), entity.getName(), entity.getSurname());
     }
 }
