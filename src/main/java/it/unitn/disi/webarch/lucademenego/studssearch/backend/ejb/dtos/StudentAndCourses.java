@@ -4,12 +4,14 @@ import java.io.Serializable;
 import java.util.List;
 
 public class StudentAndCourses implements Serializable {
-    private final Integer matriculation;
-    private final String name;
-    private final String surname;
-    private final List<CourseInformation> courses;
+    private Integer matriculation;
+    private String name;
+    private String surname;
+    private List<CourseAndVote> courses;
 
-    public StudentAndCourses(Integer matriculation, String name, String surname, List<CourseInformation> courses) {
+    public StudentAndCourses() {}
+
+    public StudentAndCourses(Integer matriculation, String name, String surname, List<CourseAndVote> courses) {
         this.matriculation = matriculation;
         this.name = name;
         this.surname = surname;
@@ -28,7 +30,19 @@ public class StudentAndCourses implements Serializable {
         return surname;
     }
 
-    public List<CourseInformation> getCourses() {
+    public List<CourseAndVote> getCourses() {
         return courses;
+    }
+
+    public String mapCoursesToHTML() {
+        StringBuilder html = new StringBuilder("<ul>");
+        for (CourseAndVote course : courses) {
+            html.append("<li>")
+                    .append("<p>").append(course.getName()).append("</p>")
+                    .append("<div class='vote'>").append(course.getVote()).append("</div>")
+                    .append("</li>")
+                    .append("<div class='neuro-divider'></div>");
+        }
+        return html.toString();
     }
 }

@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class StudentInformation implements Serializable {
-    private final Integer matriculation;
-    private final String name;
-    private final String surname;
+    private Integer matriculation;
+    private String name;
+    private String surname;
+
+    public StudentInformation() {}
 
     public StudentInformation(Integer matriculation, String name, String surname) {
         this.matriculation = matriculation;

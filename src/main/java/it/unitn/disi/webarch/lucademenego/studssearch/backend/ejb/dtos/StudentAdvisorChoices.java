@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class StudentAdvisorChoices implements Serializable {
-    private final Integer matriculation;
-    private final String name;
-    private final String surname;
-    private final List<TeacherInformation> teachers;
+    private Integer matriculation;
+    private String name;
+    private String surname;
+    private List<TeacherInformation> teachers;
 
     public Integer getMatriculation() {
         return matriculation;
@@ -25,6 +25,8 @@ public class StudentAdvisorChoices implements Serializable {
     public List<TeacherInformation> getTeachers() {
         return teachers;
     }
+
+    public StudentAdvisorChoices() {}
 
     public StudentAdvisorChoices(Integer matriculation, String name, String surname, List<TeacherInformation> teachers) {
         this.matriculation = matriculation;

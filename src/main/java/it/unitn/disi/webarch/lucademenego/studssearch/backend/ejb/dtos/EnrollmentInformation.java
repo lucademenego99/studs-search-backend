@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class EnrollmentInformation implements Serializable {
-    private final Integer matriculation;
-    private final Integer courseId;
+    private Integer matriculation;
+    private Integer courseId;
 
     public Integer getMatriculation() {
         return matriculation;
@@ -14,6 +14,8 @@ public class EnrollmentInformation implements Serializable {
     public Integer getCourseId() {
         return courseId;
     }
+
+    public EnrollmentInformation() {}
 
     public EnrollmentInformation(Integer matriculation, Integer courseId) {
         this.matriculation = matriculation;

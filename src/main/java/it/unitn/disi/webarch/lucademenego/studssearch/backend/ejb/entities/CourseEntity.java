@@ -49,10 +49,10 @@ public class CourseEntity implements Serializable {
     }
 
     @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, mappedBy = "course")
-    public Collection<StudentCourse> getStudentCourses() {
+    public Collection<StudentCourse> getCourseStudents() {
         return this.courseStudents;
     }
-    public void setStudentCourses(Collection<StudentCourse> courseStudents) {
+    public void setCourseStudents(Collection<StudentCourse> courseStudents) {
         this.courseStudents = courseStudents;
     }
 

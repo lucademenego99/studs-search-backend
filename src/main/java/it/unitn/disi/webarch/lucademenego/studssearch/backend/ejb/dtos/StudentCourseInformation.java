@@ -3,9 +3,9 @@ package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos;
 import java.util.Objects;
 
 public class StudentCourseInformation {
-    private final StudentInformation student;
-    private final CourseInformation course;
-    private final Integer vote;
+    private StudentInformation student;
+    private CourseInformation course;
+    private Integer vote;
 
     public StudentInformation getStudent() {
         return student;
@@ -18,6 +18,8 @@ public class StudentCourseInformation {
     public Integer getVote() {
         return vote;
     }
+
+    public StudentCourseInformation() {}
 
     public StudentCourseInformation(StudentInformation student, CourseInformation course, Integer vote) {
         this.student = student;

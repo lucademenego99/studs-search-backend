@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class TeacherInformation implements Serializable {
-    private final String name;
-    private final String surname;
+    private String name;
+    private String surname;
 
     public String getName() {
         return name;
@@ -14,6 +14,8 @@ public class TeacherInformation implements Serializable {
     public String getSurname() {
         return surname;
     }
+
+    public TeacherInformation() {}
 
     public TeacherInformation(String name, String surname) {
         this.name = name;

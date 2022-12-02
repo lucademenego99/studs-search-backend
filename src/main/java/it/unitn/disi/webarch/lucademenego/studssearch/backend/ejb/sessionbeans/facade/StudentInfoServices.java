@@ -4,10 +4,10 @@ import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentAd
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentAndCourses;
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentInformation;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface StudentInfoServices {
-    Collection<StudentInformation> getStudents();
+    List<StudentInformation> getStudents();
 
     StudentAndCourses getStudent(Integer matriculation);
 
