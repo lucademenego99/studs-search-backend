@@ -26,14 +26,14 @@ public class StudentCourse implements Serializable {
     /**
      * This table may contain multiple records for each student: one for each course the student is enrolled in
      */
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
     @MapsId("matriculation")
     private StudentEntity student;
 
     /**
      * This table may contain multiple records for each course: one for each time a student is enrolled to the given course
      */
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
     @MapsId("id")
     private CourseEntity course;
 
