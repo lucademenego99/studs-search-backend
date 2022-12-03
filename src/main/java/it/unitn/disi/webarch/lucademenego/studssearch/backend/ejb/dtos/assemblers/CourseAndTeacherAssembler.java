@@ -3,6 +3,9 @@ package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemble
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.CourseAndTeacher;
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.entities.CourseEntity;
 
+/**
+ * Assembler for the CourseAndTeacher DTO
+ */
 public class CourseAndTeacherAssembler implements Assembler<CourseEntity, CourseAndTeacher> {
     @Override
     public CourseAndTeacher assemble(CourseEntity entity) {

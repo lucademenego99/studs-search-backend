@@ -3,8 +3,22 @@ package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * EnrollmentInformation DTO. Exposed parameters:
+ * - matriculation: id of the student
+ * - courseId: id of the course
+ */
 public class EnrollmentInformation implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Student ID
+     */
     private Integer matriculation;
+
+    /**
+     * Course ID
+     */
     private Integer courseId;
 
     public Integer getMatriculation() {

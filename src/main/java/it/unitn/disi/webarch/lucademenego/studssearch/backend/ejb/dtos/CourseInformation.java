@@ -3,9 +3,23 @@ package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * CourseInformation DTO. Exposed parameters:
+ * - id: id of the course
+ * - name: name of the course
+ */
 public class CourseInformation implements Serializable {
-    private final Integer id;
-    private final String name;
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Course ID
+     */
+    private Integer id;
+
+    /**
+     * Course name
+     */
+    private String name;
 
     public String getName() {
         return name;
@@ -14,6 +28,8 @@ public class CourseInformation implements Serializable {
     public Integer getId() {
         return id;
     }
+
+    public CourseInformation() {}
 
     public CourseInformation(String name) {
         this.name = name;

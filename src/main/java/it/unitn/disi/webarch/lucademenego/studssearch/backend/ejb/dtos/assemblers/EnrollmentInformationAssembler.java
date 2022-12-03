@@ -3,6 +3,9 @@ package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.assemble
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.EnrollmentInformation;
 import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.entities.StudentCourse;
 
+/**
+ * Assembler for the EnrollmentInformation DTO
+ */
 public class EnrollmentInformationAssembler implements Assembler<StudentCourse, EnrollmentInformation>{
     @Override
     public EnrollmentInformation assemble(StudentCourse entity) {

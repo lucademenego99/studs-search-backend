@@ -5,11 +5,22 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Embeddable entity representing the Key of the STUDENT_COURSE table
+ * The key is composed by the student matriculation number and the course ID
+ */
 @Embeddable
 public class StudentCourseId implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Student ID
+     */
     private Integer matriculation;
+
+    /**
+     * Course ID
+     */
     private Integer id;
 
     public StudentCourseId() {}

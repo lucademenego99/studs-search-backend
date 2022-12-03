@@ -7,9 +7,16 @@ import jakarta.ejb.Remote;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 
+/**
+ * Stateless remote bean exposing functions to manage teachers
+ */
 @Stateless
 @Remote(TeacherManagement.class)
 public class TeacherManagementBean implements TeacherManagement {
+
+    /**
+     * Inject the teacher local bean for performing the operations
+     */
     @Inject
     Teacher teacherBean;
 

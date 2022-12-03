@@ -11,9 +11,16 @@ import jakarta.ejb.Remote;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 
+/**
+ * Stateless remote bean exposing functions to manage students
+ */
 @Stateless
 @Remote(StudentManagement.class)
 public class StudentManagementBean implements StudentManagement {
+
+    /**
+     * Inject the student local bean for performing the operations
+     */
     @Inject
     Student studentBean;
 

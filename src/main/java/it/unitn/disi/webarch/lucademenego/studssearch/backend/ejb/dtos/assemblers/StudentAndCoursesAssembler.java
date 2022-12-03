@@ -8,6 +8,9 @@ import it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.entities.Stude
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Assembler for the StudentAndCourses DTO
+ */
 public class StudentAndCoursesAssembler implements Assembler<StudentEntity, StudentAndCourses> {
     @Override
     public StudentAndCourses assemble(StudentEntity entity) {

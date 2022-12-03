@@ -5,11 +5,32 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Database entity - `TEACHER` table
+ * The entity represents the teachers
+ *
+ * Each teacher has a 1:1 relationship with a course, but since
+ * it is unidirectional (course -> teacher), this class does not
+ * expose the teacher's course
+ */
 @Entity
 @Table(name = "TEACHER")
 public class TeacherEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Teacher ID - primary key
+     */
     private Integer id;
+
+    /**
+     * Teacher name
+     */
     private String name;
+
+    /**
+     * Teacher surname
+     */
     private String surname;
 
     public TeacherEntity() {}

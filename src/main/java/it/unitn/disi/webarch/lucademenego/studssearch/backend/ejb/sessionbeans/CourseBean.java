@@ -8,6 +8,9 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
+/**
+ * Stateless local bean used to manage courses
+ */
 @Stateless
 @Local(Course.class)
 public class CourseBean implements Course {

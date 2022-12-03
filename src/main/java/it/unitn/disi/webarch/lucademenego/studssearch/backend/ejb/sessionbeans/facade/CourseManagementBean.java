@@ -9,9 +9,15 @@ import jakarta.ejb.Remote;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 
+/**
+ * Stateless remote bean exposing functions to manage courses
+ */
 @Stateless
 @Remote(CourseManagement.class)
 public class CourseManagementBean implements CourseManagement {
+    /**
+     * Inject the course local bean for performing the operations
+     */
     @Inject
     Course courseBean;
 

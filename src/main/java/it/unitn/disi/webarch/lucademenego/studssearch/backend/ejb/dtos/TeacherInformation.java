@@ -3,11 +3,29 @@ package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * TeacherInformation DTO. Exposed parameters:
+ * - id: id of the teacher
+ * - name: name of the teacher
+ * - surname: surname of the teacher
+ */
 public class TeacherInformation implements Serializable {
-    private Integer id;
-    private String name;
-    private String surname;
+    private static final long serialVersionUID = 1L;
 
+    /**
+     * Teacher ID
+     */
+    private Integer id;
+
+    /**
+     * Teacher name
+     */
+    private String name;
+
+    /**
+     * Teacher surname
+     */
+    private String surname;
 
     public Integer getId() {
         return id;

@@ -16,12 +16,18 @@ import jakarta.persistence.PersistenceContext;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Stateless remote bean exposing functions to get information about the students
+ */
 @Stateless
 @Remote(StudentInfoServices.class)
 public class StudentInfoServicesBean implements StudentInfoServices {
     @PersistenceContext(unitName = "default")
     private EntityManager entityManager;
 
+    /**
+     * Inject the student local bean for performing the operations
+     */
     @Inject
     Student studentBean;
 

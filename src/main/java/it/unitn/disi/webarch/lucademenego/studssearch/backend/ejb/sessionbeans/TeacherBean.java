@@ -7,6 +7,9 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
+/**
+ * Stateless local bean used to manage teachers
+ */
 @Stateless
 @Local(Teacher.class)
 public class TeacherBean implements Teacher {

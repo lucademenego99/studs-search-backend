@@ -13,6 +13,19 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.util.Properties;
 
+/**
+ * Program used to fill the database, exploiting the created facade beans
+ *
+ * The program will add:
+ * - 5 students
+ * - 4 teachers
+ * - 4 courses
+ *
+ * It will also:
+ * - assign each course to a certain teachers
+ * - enroll some students to some courses
+ * - assign some votes to some students
+ */
 public class FillDatabase {
     public static void main(String[] args) {
         StudentManagement studentManagement = null;

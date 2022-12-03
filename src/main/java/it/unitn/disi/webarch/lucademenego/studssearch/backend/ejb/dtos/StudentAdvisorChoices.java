@@ -4,10 +4,34 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * StudentAdvisorChoices DTO. Exposed parameters:
+ * - matriculation: id of the student
+ * - name: name of the student
+ * - surname: surname of the student
+ * - teachers: list of possible advisors for the student
+ */
 public class StudentAdvisorChoices implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Student ID
+     */
     private Integer matriculation;
+
+    /**
+     * Student name
+     */
     private String name;
+
+    /**
+     * Student surname
+     */
     private String surname;
+
+    /**
+     * List of teachers that can become the student's advisors
+     */
     private List<TeacherInformation> teachers;
 
     public Integer getMatriculation() {

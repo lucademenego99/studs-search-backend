@@ -12,6 +12,9 @@ import jakarta.persistence.PersistenceContext;
 
 import java.util.Collection;
 
+/**
+ * Stateless local bean used to manage students
+ */
 @Stateless
 @Local(Student.class)
 public class StudentBean implements Student {

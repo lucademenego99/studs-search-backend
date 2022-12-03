@@ -3,8 +3,22 @@ package it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * CourseAndVote DTO. Exposed parameters:
+ * - name: name of the course
+ * - vote: vote received by the student for the course
+ */
 public class CourseAndVote implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Course name
+     */
     private String name;
+
+    /**
+     * Vote received for the course
+     */
     private Integer vote;
 
     public String getName() {
@@ -14,6 +28,8 @@ public class CourseAndVote implements Serializable {
     public Integer getVote() {
         return vote;
     }
+
+    public CourseAndVote() {}
 
     public CourseAndVote(String name, Integer vote) {
         this.name = name;

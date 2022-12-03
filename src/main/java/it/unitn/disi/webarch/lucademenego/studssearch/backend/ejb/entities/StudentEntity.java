@@ -7,12 +7,35 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * Database entity - `STUDENT` table
+ * The entity represents the students
+ *
+ * Students have an N:M relationship with courses
+ */
 @Entity
 @Table(name = "STUDENT")
 public class StudentEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Student ID - primary key
+     */
     private Integer matriculation;
+
+    /**
+     * Student name
+     */
     private String name;
+
+    /**
+     * Student surname
+     */
     private String surname;
+
+    /**
+     * List of courses the student is enrolled in
+     */
     private Collection<StudentCourse> studentCourses = new ArrayList<StudentCourse>();
 
     public StudentEntity() {}
@@ -48,7 +71,14 @@ public class StudentEntity implements Serializable {
         this.surname = surname;
     }
 
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, mappedBy = "student")
+    /**
+     * Get the list of courses the student is enrolled in
+     *
+     * On delete, we don't want the updates to cascade on the other entities.
+     * The corresponding courses are fetched lazily.
+     * @return a list of courses the student is enrolled in, in form of a list of `StudentCourse` entities
+     */
+    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "student")
     public Collection<StudentCourse> getStudentCourses() {
         return this.studentCourses;
     }

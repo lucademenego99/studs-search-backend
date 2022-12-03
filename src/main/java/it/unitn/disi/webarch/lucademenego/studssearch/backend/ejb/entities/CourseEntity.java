@@ -6,13 +6,35 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * Database entity - `COURSE` table
+ * The entity represents a course.
+ * Each course has a 1:1 relationship with a teacher
+ * Courses have an M:N relationship with students
+ */
 @Entity
 @Table(name = "COURSE")
 public class CourseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Course ID - primary key
+     */
     private Integer id;
+
+    /**
+     * Course name
+     */
     private String name;
-    // private Integer teacherId;
+
+    /**
+     * Teacher assigned to the course
+     */
     private TeacherEntity teacher;
+
+    /**
+     * List of students enrolled to the course
+     */
     private Collection<StudentCourse> courseStudents;
 
     public CourseEntity() {}
@@ -39,6 +61,14 @@ public class CourseEntity implements Serializable {
         this.name = name;
     }
 
+    /**
+     * Get the assigned teacher.
+     *
+     * The course has a 1:1 relationship with the teacher.
+     * On delete, we don't want the updates to cascade on the other entities.
+     * The corresponding teacher is fetched lazily.
+     * @return the assigned teacher, in form of a `TeacherEntity` entity
+     */
     @OneToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "TEACHER_ID")
     public TeacherEntity getTeacher() {
@@ -48,7 +78,15 @@ public class CourseEntity implements Serializable {
         this.teacher = teacher;
     }
 
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, mappedBy = "course")
+    /**
+     * Get the students enrolled to the course
+     *
+     * The course has an M:N relationship with the students.
+     * On delete, we don't want the updates to cascade on the other entities.
+     * The students are fetched lazily.
+     * @return list of students enrolled to the course, in form of a list of `StudentCourse` entities
+     */
+    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "course")
     public Collection<StudentCourse> getCourseStudents() {
         return this.courseStudents;
     }
